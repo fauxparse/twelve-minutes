@@ -1,0 +1,17 @@
+{
+  "eslint.packageManager": "yarn",
+  "jest.showCoverageOnLoad": true,
+  "vitest.commandLine": "yarn vitest",
+  "vitest.enable": true,
+  "vitest.showFailMessages": true,
+  "jest.autoRun": null,
+  "cSpell.words": ["xstate"],
+  "scss.validate": false,
+  "stylelint.packageManager": "yarn",
+  "stylelint.snippet": ["css", "less", "postcss", "scss"],
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
+  "stylelint.stylelintPath": "",
+  "scssFormatter.printWidth": 80,
+  "scss.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownProperties": "ignore"
+}
