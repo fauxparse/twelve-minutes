@@ -1,11 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import * as Font from 'expo-font';
-import Counter from './components/Counter';
 import { useEffect, useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, SafeAreaView } from 'react-native';
+import * as Font from 'expo-font';
+import { useKeepAwake } from 'expo-keep-awake';
+import Timer from './components/Timer';
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useKeepAwake();
 
   useEffect(() => {
     Font.loadAsync({
@@ -16,10 +19,10 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <View style={styles.container}>
-      <Counter remaining={720000} />
+    <SafeAreaView style={styles.container}>
+      <Timer />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 

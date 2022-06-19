@@ -1,16 +1,18 @@
 import { useContext } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import SizingContext from './SizingContext';
+import CounterContext from './CounterContext';
 
 type NumeralProps = {
   children: number;
 };
 
 const Numeral = ({ children }: NumeralProps) => {
-  const { vmin } = useContext(SizingContext);
+  const { vmin, color } = useContext(CounterContext);
   return (
     <View style={[styles.container, { width: 20 * vmin, height: 30 * vmin }]}>
-      <Text style={[styles.digit, { fontSize: 28 * vmin }]}>{children}</Text>
+      <Text style={[styles.digit, { fontSize: 28 * vmin, color }]}>
+        {children}
+      </Text>
     </View>
   );
 };

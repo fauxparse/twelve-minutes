@@ -21,7 +21,7 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": [
       "error",
-      { "ignoreRestSiblings": true }
+      { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }
     ],
     "comma-dangle": ["error", "only-multiline"],
     "indent": [
