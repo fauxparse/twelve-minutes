@@ -27,6 +27,7 @@
         "backgroundColor": "#000000"
       },
       "package": "se.fauxpar.twelveminutes",
+      "permissions": [],
       "versionCode": 1,
       "backgroundColor": "#000000",
       "userInterfaceStyle": "dark"
