@@ -1,11 +1,26 @@
 import { useCallback } from 'react';
 import { useInterpret, useSelector } from '@xstate/react';
 import { last } from 'lodash-es';
+import { Audio } from 'expo-av';
 import machine from './timerMachine';
 import Counter, { CounterProps } from './Counter';
 
-const Timer = () => {
-  const timer = useInterpret(machine);
+export type TimerSounds = {
+  ding: Audio.Sound;
+  dingding: Audio.Sound;
+};
+
+const Timer: React.FC<{ sounds: TimerSounds }> = ({ sounds }) => {
+  const timer = useInterpret(machine, {
+    actions: {
+      ding: () => {
+        sounds.ding.playAsync();
+      },
+      dingding: () => {
+        sounds.dingding.playAsync();
+      },
+    },
+  });
 
   const { send } = timer;
 

@@ -69,12 +69,14 @@ createMachine(
             always: {
               target: 'orange',
               cond: ({ current }) => current <= TWO_MINUTES,
+              actions: 'ding',
             },
           },
           orange: {
             always: {
               target: 'red',
               cond: ({ current }) => current <= THIRTY_SECONDS,
+              actions: 'dingding',
             },
           },
           red: {},

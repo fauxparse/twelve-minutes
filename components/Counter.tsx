@@ -47,9 +47,13 @@ const Counter = ({ remaining, state, onPress, onLongPress }: CounterProps) => {
 
   return (
     <CounterContext.Provider value={{ vmin, color }}>
-      <TouchableWithoutFeedback onPress={onPress} onLongPress={onLongPress}>
-        <View>
-          <View style={styles.container}>
+      <TouchableWithoutFeedback
+        delayLongPress={1000}
+        onPress={onPress}
+        onLongPress={onLongPress}
+      >
+        <View style={styles.container}>
+          <View style={styles.counter}>
             <Numeral>{digits[3]}</Numeral>
             <Numeral>{digits[2]}</Numeral>
             <Text
@@ -87,6 +91,13 @@ const Counter = ({ remaining, state, onPress, onLongPress }: CounterProps) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    alignSelf: 'stretch',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  counter: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

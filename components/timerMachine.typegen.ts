@@ -7,6 +7,8 @@ export interface Typegen0 {
     start: 'START';
     pause: 'PAUSE';
     tick: 'TICK';
+    ding: '';
+    dingding: '';
   };
   internalEvents: {
     '': { type: '' };
@@ -14,7 +16,7 @@ export interface Typegen0 {
   };
   invokeSrcNameMap: {};
   missingImplementations: {
-    actions: never;
+    actions: 'ding' | 'dingding';
     services: never;
     guards: never;
     delays: never;
