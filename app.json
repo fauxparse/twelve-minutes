@@ -28,6 +28,7 @@
       },
       "package": "se.fauxpar.twelveminutes",
       "permissions": [],
+      "blockedPermissions": ["RECORD_AUDIO"],
       "versionCode": 1,
       "backgroundColor": "#000000",
       "userInterfaceStyle": "dark"
